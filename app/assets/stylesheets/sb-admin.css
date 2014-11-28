@@ -43,7 +43,7 @@ body {
 }
 
 
-/* Top Navigation */
+/* Top Navigation- barra horizontal de arriba */
 
 .top-nav {
     padding: 0 15px;
@@ -55,7 +55,7 @@ body {
 }
 
 .top-nav>li>a {
-    padding-top: 15px;
+    padding-top: 15px; 
     padding-bottom: 15px;
     line-height: 20px;
     color: #999;
@@ -68,6 +68,12 @@ body {
 .top-nav>.open>a:focus {
     color: #fff;
     background-color: #000;
+}
+
+/* Fuente de letra Lending-Equipment  */
+a.navbar-brand,
+h1.page-header {
+    font-family: 'Lobster', cursive;
 }
 
 .top-nav>.open>.dropdown-menu {
@@ -133,10 +139,12 @@ ul.alert-dropdown {
 
     .side-nav li a:hover,
     .side-nav li a:focus {
-        outline: none;
+        outline: none; 
         background-color: #000 !important;
     }
 }
+
+
 
 .side-nav>li>ul {
     padding: 0;

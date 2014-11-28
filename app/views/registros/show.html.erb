@@ -21,6 +21,6 @@
   <%= link_to '',edit_registro_path(@registro), :class => 'fa fa-edit fa-2x' %>
   <%= link_to '', registro_path(@registro),
               :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Estas Seguro?')) },
+              :data => { :confirm => 'Estas Seguro?' },
               :class => 'fa fa-trash-o fa-2x' %>
 </div>

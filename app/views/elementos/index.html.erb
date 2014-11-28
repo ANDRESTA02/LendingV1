@@ -46,9 +46,11 @@
         <td><%= elemento.estado.nombre %></td>
         <td>
           <%= link_to'', edit_elemento_path(elemento,tipo_elemento_id: @tipo_elemento_id), :class => 'fa fa-edit fa-2x' %>
-          <%= link_to '', elemento_path(elemento),:method => :delete,
-          :data => { :confirm => 'Estas Seguro?'},
+          <%= link_to '', elemento_path(elemento),
+          :method => :delete,
+          :data => { :confirm =>'Estas Seguro?' },
           :class => 'fa fa-trash-o fa-2x' %>
+         
         </td>
       </tr>
       <% end %>
