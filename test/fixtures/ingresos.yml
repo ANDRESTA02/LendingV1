@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  documento: MyString
+  ficha: MyString
+  elemento_id: 
+  prestamo: MyString
+
+two:
+  nombre: MyString
+  documento: MyString
+  ficha: MyString
+  elemento_id: 
+  prestamo: MyString

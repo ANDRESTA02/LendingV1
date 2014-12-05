@@ -15,6 +15,7 @@ class TipoElementosController < ApplicationController
   # GET /tipo_elementos/new
   def new
     @tipo_elemento = TipoElemento.new
+    
   end
 
   # GET /tipo_elementos/1/edit

@@ -1,0 +1,25 @@
+<%= simple_form_for @ingreso, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :nombre %>
+  <%= error_span(@ingreso[:nombre]) %>
+  <%= f.input :documento %>
+  <%= error_span(@ingreso[:documento]) %>
+  <%= f.input :ficha %>
+  <%= error_span(@ingreso[:ficha]) %>
+  <%= f.input :prestamo %>
+  <%= error_span(@ingreso[:prestamo]) %>
+
+
+      
+   
+      <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">*Tipo Costo</label>
+        <div class="col-md-7">
+           <%= select("tipo_elemento", "id", TipoElemento.all.collect {|c| [ c.nombre, c.id ] }, { include_blank: false, required: true }) %>
+           <%= select("elemento", "nombre", options_for_select(@elements), {class: 'chained-select form-control', prompt: 'Elemento de acuerdo al tipo de elemento'}) %>
+        </div>
+      </div> 
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                ingresos_path, :class => 'btn btn-default' %>
+<% end %>

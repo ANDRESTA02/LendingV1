@@ -70,11 +70,22 @@ body {
     background-color: #000;
 }
 
+
+
+
 /* Fuente de letra Lending-Equipment  */
+
 a.navbar-brand,
-h1.page-header {
+h1.page-header,
+ol.breadcrumbs {
     font-family: 'Lobster', cursive;
 }
+
+/*Fuente de el menu izquierdo*/
+
+
+
+
 
 .top-nav>.open>.dropdown-menu {
     float: left;
@@ -160,6 +171,8 @@ ul.alert-dropdown {
 .side-nav>li>ul>li>a:hover {
     color: #fff;
 }
+
+
 
 /* Flot Chart Containers */
 

@@ -1,6 +1,7 @@
 $(document).ready(function(){
-	$("#tipo_elemento_icono").on("click change",function(){
+	$("select#tipo_elemento_icono").on("load click change",function(){
 		var glyficon= $(this).val();
 		$("div#icon").html('<i class="'+glyficon+'"></i>');
+		
 	});
 });

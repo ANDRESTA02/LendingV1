@@ -1,0 +1,9 @@
+<%= simple_form_for @cargo, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :roll %>
+  <%= error_span(@cargo[:roll]) %>
+
+  <%= f.button :submit,'Guardar', :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                cargos_path, :class => 'btn btn-default' %>
+
+<% end %>

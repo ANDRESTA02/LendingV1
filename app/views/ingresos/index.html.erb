@@ -1,0 +1,64 @@
+<%- model_class = Ingreso -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    
+    <%= form_tag elementos_path, :method => 'get' do %>
+    <% content_tag :label do %>
+    Buscar:
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Codigo Interno", :class => "btn btn-success"%>
+    <% end %>
+    <% end %>
+
+  </div>
+
+
+  <table class="table table-striped table-bordered">
+    <thead class="btn-success">
+      <tr>
+        <th><%= model_class.human_attribute_name(:id) %></th>
+        <th><%= model_class.human_attribute_name(:nombre) %></th>
+        <th><%= model_class.human_attribute_name(:documento) %></th>
+        <th><%= model_class.human_attribute_name(:ficha) %></th>
+        <th><%= model_class.human_attribute_name(:elemento_id) %></th>
+        <th><%= model_class.human_attribute_name(:prestamo) %></th>
+        <th><%= model_class.human_attribute_name(:created_at) %></th>
+        <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ingresos.each do |ingreso| %>
+        <tr>
+          <td><%= link_to ingreso.id, ingreso_path(ingreso) %></td>
+          <td><%= ingreso.nombre %></td>
+          <td><%= ingreso.documento %></td>
+          <td><%= ingreso.ficha %></td>
+          <td><%= ingreso.elemento_id %></td>
+          <td><%= ingreso.prestamo %></td>          
+          <td><%=l ingreso.created_at %></td>
+       
+          <td>
+
+
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        edit_ingreso_path(ingreso), :class => 'btn btn-default btn-xs' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                        ingreso_path(ingreso),
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                        :class => 'btn btn-xs btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_ingreso_path,
+            :class => 'btn btn-primary' %>

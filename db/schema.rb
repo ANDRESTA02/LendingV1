@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111000828) do
+ActiveRecord::Schema.define(version: 20141204011111) do
 
   create_table "ambientes", force: true do |t|
     t.string   "nombre"
     t.string   "ubicacion"
     t.string   "codigo"
     t.text     "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cargos", force: true do |t|
+    t.string   "roll"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,6 +48,18 @@ ActiveRecord::Schema.define(version: 20141111000828) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "ingresos", force: true do |t|
+    t.string   "nombre"
+    t.string   "documento"
+    t.string   "ficha"
+    t.integer  "elemento_id"
+    t.string   "prestamo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ingresos", ["elemento_id"], name: "index_ingresos_on_elemento_id"
 
   create_table "registros", force: true do |t|
     t.string   "documento"
